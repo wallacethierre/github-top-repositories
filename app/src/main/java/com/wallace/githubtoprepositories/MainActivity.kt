@@ -3,11 +3,14 @@ package com.wallace.githubtoprepositories
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wallace.githubtoprepositories.adapter.RepositoryAdapter
 import com.wallace.githubtoprepositories.databinding.ActivityMainBinding
 import com.wallace.githubtoprepositories.viewmodel.GithubRepoViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,6 +25,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupRecycleView()
+        loadData()
+    }
+
+    private fun loadData() {
+        lifecycleScope.launch {
+            githubRepoViewMode.listOfRepository.collect { pagingData ->
+                repoAdapter.submitData(pagingData)
+            }
+        }
     }
 
     private fun setupRecycleView() {
@@ -32,11 +44,11 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
 
-        githubRepoViewMode.responseRepositories.observe(this) { repoList ->
-            if (repoList != null) {
-                repoAdapter.submitList(repoList)
-            }
-        }
+//        githubRepoViewMode.responseRepositories.observe(this) { repoList ->
+//            if (repoList != null) {
+//                repoAdapter.submitList(repoList)
+//            }
+//        }
     }
 
 }
