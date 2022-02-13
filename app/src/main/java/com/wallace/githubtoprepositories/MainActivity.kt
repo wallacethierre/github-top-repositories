@@ -7,9 +7,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wallace.githubtoprepositories.adapter.RepositoryAdapter
 import com.wallace.githubtoprepositories.databinding.ActivityMainBinding
-import com.wallace.githubtoprepositories.viewmodel.GithubRepoViewModel
+import com.wallace.githubtoprepositories.viewmodel.RepositoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var repoAdapter: RepositoryAdapter
-    private val githubRepoViewMode: GithubRepoViewModel by viewModels()
+    private val repositoryViewMode: RepositoryViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadData() {
         lifecycleScope.launch {
-            githubRepoViewMode.listOfRepository.collect { pagingData ->
+            repositoryViewMode.listOfRepository.collectLatest { pagingData ->
                 repoAdapter.submitData(pagingData)
             }
         }
@@ -41,14 +41,6 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.apply {
             adapter = repoAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
-            setHasFixedSize(true)
         }
-
-//        githubRepoViewMode.responseRepositories.observe(this) { repoList ->
-//            if (repoList != null) {
-//                repoAdapter.submitList(repoList)
-//            }
-//        }
     }
-
 }
