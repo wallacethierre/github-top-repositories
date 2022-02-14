@@ -31,6 +31,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
     }
 
     buildFeatures {
@@ -47,15 +48,28 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+    //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
 
-
+    //DI Hilt
     implementation 'com.google.dagger:dagger:2.37'
     kapt 'com.google.dagger:dagger-compiler:2.37'
     implementation 'com.google.dagger:hilt-android:2.33-beta'
     kapt 'com.google.dagger:hilt-android-compiler:2.33-beta'
+
+    //Paging
+    implementation "androidx.paging:paging-runtime-ktx:3.0.1"
+
+    // room
+    implementation "androidx.room:room-runtime:2.3.0"
+    implementation "androidx.room:room-ktx:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
 
     //Tests dependencies
     testImplementation 'junit:junit:4.13.2'

@@ -2,7 +2,7 @@ package com.wallace.githubtoprepositories.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Repository(
+data class RepositoryResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("name")
