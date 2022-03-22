@@ -3,7 +3,7 @@ package com.wallace.githubtoprepositories.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.wallace.githubtoprepositories.model.RepositoryResponse
-import com.wallace.githubtoprepositories.repository.RepositoryRepository
+import com.wallace.githubtoprepositories.data.repository.RepositoryRepository
 
 class RepositoryPagingSource(
     private val repository: RepositoryRepository,

@@ -1,4 +1,4 @@
-package com.wallace.githubtoprepositories.db
+package com.wallace.githubtoprepositories.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert

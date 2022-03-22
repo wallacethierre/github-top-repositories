@@ -1,13 +1,13 @@
-package com.wallace.githubtoprepositories
+package com.wallace.githubtoprepositories.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wallace.githubtoprepositories.adapter.RepositoryAdapter
+import com.wallace.githubtoprepositories.ui.adapter.RepositoryAdapter
 import com.wallace.githubtoprepositories.databinding.ActivityMainBinding
-import com.wallace.githubtoprepositories.viewmodel.RepositoryViewModel
+import com.wallace.githubtoprepositories.ui.viewmodel.RepositoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

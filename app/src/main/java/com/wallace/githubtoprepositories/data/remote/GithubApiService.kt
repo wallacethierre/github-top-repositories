@@ -1,4 +1,4 @@
-package com.wallace.githubtoprepositories.remote
+package com.wallace.githubtoprepositories.data.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Query

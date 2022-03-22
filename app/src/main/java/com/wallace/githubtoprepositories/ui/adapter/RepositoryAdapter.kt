@@ -1,4 +1,4 @@
-package com.wallace.githubtoprepositories.adapter
+package com.wallace.githubtoprepositories.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.wallace.githubtoprepositories.databinding.RepositoryItemListBinding
-import com.wallace.githubtoprepositories.db.RepositoryEntry
+import com.wallace.githubtoprepositories.data.db.RepositoryEntry
 
 class RepositoryAdapter : PagingDataAdapter<RepositoryEntry, RepositoryAdapter.RepositoryViewHolder>(diffCallback) {
 

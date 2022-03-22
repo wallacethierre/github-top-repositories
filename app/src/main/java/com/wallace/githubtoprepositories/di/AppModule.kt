@@ -1,11 +1,11 @@
 package com.wallace.githubtoprepositories.di
 
 import android.app.Application
-import com.wallace.githubtoprepositories.Constants
-import com.wallace.githubtoprepositories.db.PageIndexDao
-import com.wallace.githubtoprepositories.db.RepositoryDao
-import com.wallace.githubtoprepositories.db.RepositoryDatabase
-import com.wallace.githubtoprepositories.remote.GithubApiService
+import com.wallace.githubtoprepositories.common.Constants
+import com.wallace.githubtoprepositories.data.db.PageIndexDao
+import com.wallace.githubtoprepositories.data.db.RepositoryDao
+import com.wallace.githubtoprepositories.data.db.RepositoryDatabase
+import com.wallace.githubtoprepositories.data.remote.GithubApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

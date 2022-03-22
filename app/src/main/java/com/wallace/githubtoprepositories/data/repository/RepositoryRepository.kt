@@ -1,6 +1,6 @@
-package com.wallace.githubtoprepositories.repository
+package com.wallace.githubtoprepositories.data.repository
 
-import com.wallace.githubtoprepositories.remote.GithubApiService
+import com.wallace.githubtoprepositories.data.remote.GithubApiService
 import javax.inject.Inject
 
 class RepositoryRepository @Inject constructor(private val githubApiService: GithubApiService) {

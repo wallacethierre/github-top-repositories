@@ -1,4 +1,4 @@
-package com.wallace.githubtoprepositories.viewmodel
+package com.wallace.githubtoprepositories.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,9 +6,9 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.wallace.githubtoprepositories.db.RepositoryDatabase
+import com.wallace.githubtoprepositories.data.db.RepositoryDatabase
 import com.wallace.githubtoprepositories.paging.RepositoryRemoteMediator
-import com.wallace.githubtoprepositories.remote.GithubApiService
+import com.wallace.githubtoprepositories.data.remote.GithubApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

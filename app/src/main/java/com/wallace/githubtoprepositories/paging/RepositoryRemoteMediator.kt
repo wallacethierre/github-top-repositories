@@ -5,10 +5,10 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
-import com.wallace.githubtoprepositories.db.PageIndexEntry
-import com.wallace.githubtoprepositories.db.RepositoryDatabase
-import com.wallace.githubtoprepositories.db.RepositoryEntry
-import com.wallace.githubtoprepositories.remote.GithubApiService
+import com.wallace.githubtoprepositories.data.db.PageIndexEntry
+import com.wallace.githubtoprepositories.data.db.RepositoryDatabase
+import com.wallace.githubtoprepositories.data.db.RepositoryEntry
+import com.wallace.githubtoprepositories.data.remote.GithubApiService
 import retrofit2.HttpException
 import java.io.IOException
 

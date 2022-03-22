@@ -1,4 +1,4 @@
-package com.wallace.githubtoprepositories.db
+package com.wallace.githubtoprepositories.data.db
 
 import android.content.Context
 import androidx.room.Database
