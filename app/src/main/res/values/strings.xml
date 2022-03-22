@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Github Top Repositories</string>
+    <string name="stars_label">Stars:</string>
+    <string name="fork_label">Fork:</string>
+</resources>
